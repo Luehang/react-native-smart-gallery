@@ -14,9 +14,14 @@ An easy and simple to use React Native component to render a large to very large
 - Includes zoom mode.
 - Initial index can be placed anywhere. Supporting both Android and iOS.
 - Easily customizable.
-- Supports two ways of rendering contents. Render using function and data or render React.Element children.
 - Intelligent scrolling detection to cushion rough swipe guestures.
 - Supports both iOS and Android.
+
+<h3 align="center">
+    Motivation
+</h3>
+
+**Why was this created?**  In the open source development community, there isn't a single React Native gallery that can efficently render a very large list of images with the initial index being placed anywhere in the list of images.  The gallery also includes guestures and important event listeners for pan, pinch, single tap and double tap.
 
 <br/>
 
