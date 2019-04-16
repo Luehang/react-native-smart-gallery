@@ -21,7 +21,7 @@ An easy and simple to use React Native component to render a large to very large
     Motivation
 </h3>
 
-**Why was this created?**  In the open source development community, there isn't a single React Native gallery that can efficently render a very large list of images with the initial index being placed anywhere in the list of images.  The gallery also includes guestures and important event listeners for pan, pinch, single tap and double tap.
+**Why was this created?**  In the open source development community, there isn't a single React Native gallery that can efficently render a very large list of images with the initial index being placed anywhere in the list of images while supporting both Android and iOS.  This gallery solves all that along with guestures and important event listeners for pan, pinch, single tap and double tap.
 
 <br/>
 
