@@ -1,4 +1,4 @@
-<a href="https://luehangs.site"><img src="https://luehangs.site/images/lh-blog-strip.jpg" alt="LH LABS"/></a>
+<a href="https://luehangs.site"><img src="https://luehangs.site/images/lh-blog-strip.jpg" alt="LueHsoft LueH LABS Lue Hang luehang"/></a>
 <br/>
 <br/>
 
@@ -21,7 +21,7 @@ An easy and simple to use React Native component to render a large to very large
     Motivation
 </h3>
 
-**Why was this created?**  In the open source development community, there isn't a single React Native gallery that can efficently render a very large list of images with the initial index being placed anywhere in the list of images while supporting both Android and iOS.  This gallery solves all that along with guestures and important event listeners for pan, pinch, single tap and double tap.
+**Why was this created?**  In the open source development community, there isn't a single React Native gallery that can efficiently render a very large list of images with the initial index being placed anywhere in the list of images while supporting both Android and iOS. This gallery solves all that along with gestures and important event listeners for pan, pinch, single tap and double tap.
 
 <br/>
 
@@ -115,7 +115,7 @@ Not sure where to start, or a beginner? Take a look at the [issues page](https:/
 
 <br/>
 <br/>
-<a href="https://luehangs.site/marketplace/product/RN%20Posting%20Demo%20App%20Kit"><img src="https://luehangs.site/images/lh-mobile-strip.jpg" alt="LH LABS"/></a>
+<a href="https://luehangs.site/marketplace/product/RN%20Posting%20Demo%20App%20Kit"><img src="https://luehangs.site/images/lh-mobile-strip.jpg" alt="LueHsoft LueH LABS Lue Hang luehang"/></a>
 <br/>
 <br/>
 
