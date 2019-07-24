@@ -34,7 +34,7 @@
     "Lue Hang",
     "luehang"
   ],
-  "homepage": "https://github.com/Luehang/react-native-smart-gallery",
+  "homepage": "https://luehangs.site/lue_hang/projects/react-native-smart-gallery",
   "author": {
     "name": "Lue Hang",
     "email": "lue_hang@hotmail.com",
@@ -62,9 +62,9 @@
   ],
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react-native-easy-guesture-responder": "^1.0.0",
-    "react-native-image-transformer": "^1.0.3",
-    "react-native-smart-page": "^1.0.0"
+    "react-native-easy-guesture-responder": "^1.1.2",
+    "react-native-image-transformer": "^1.0.6",
+    "react-native-smart-page": "^1.0.1"
   },
   "peerDependencies": {
     "react": "*",
