@@ -330,7 +330,7 @@ export default class SmartGallery extends PureComponent {
                             onDoubleTapEndReached(transform, index);
                     }}
                     ref={(ref) => { this.imageRefs.set(index, ref); }}
-                    key={"innerImage#" + index}
+                    key={`innerImage#${item.key || index}`}
                     errorComponent={errorComponent}
                     imageComponent={renderItem}
                     image={item}
