@@ -221,7 +221,13 @@ export default class SmartGallery extends PureComponent {
 
         const space = viewTransformer.getAvailableTranslateSpace();
         const dx = gestureState.moveX - gestureState.previousMoveX;
+        const dy = gestureState.moveY - gestureState.previousMoveY;
+        const absDx = Math.abs(dx);
+        const absDy = Math.abs(dy);
 
+        if (absDx < absDy) {
+          return false
+        }
         if (dx > 0 && space.left <= 0 && this.currentPage > 0) {
             return true;
         }
