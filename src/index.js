@@ -85,9 +85,8 @@ export default class SmartGallery extends PureComponent {
         this.getCurrentImageTransformer = this.getCurrentImageTransformer.bind(this);
         this.getImageTransformer = this.getImageTransformer.bind(this);
         this.activeImageResponder = this.activeImageResponder.bind(this);
-    }
 
-    componentWillMount () {
+        // componentWillMount()
         let onResponderReleaseOrTerminate = (evt, gestureState) => {
             if (this.activeResponder) {
                 if (this.activeResponder === this.viewPagerResponder &&
