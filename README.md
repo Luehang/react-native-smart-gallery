@@ -63,6 +63,94 @@ $ yarn add react-native-smart-gallery
 ```
 
 <br/>
+<br/>
+<br/>
+
+---
+<br/>
+<br/>
+<br/>
+
+## :tada: Usage Example
+
+Add an ``import`` to the top of the file.  At minimal, declare the `SmartGallery` component in the `render()` method providing an array of data for the `images` prop.
+
+```javascript
+import SmartGallery from "react-native-smart-gallery";
+
+//...
+render() {
+    return (
+        <SmartGallery
+            images={[
+                // Can be used with different image object fieldnames.
+                // Ex. source, source.uri, uri, URI, url, URL
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg" },
+                { source: { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg" } },
+                { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg" },
+                { URI: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg" },
+                { url: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg" },
+                { URL: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg" },
+            ]}
+        />
+    );
+}
+//...
+```
+
+<br/>
+<br/>
+<br/>
+
+---
+<br/>
+<br/>
+<br/>
+
+## :tada: Performance Optimization List Example
+
+```javascript
+import SmartGallery from "react-native-smart-gallery";
+
+//...
+render() {
+    return (
+        <SmartGallery
+            images={[
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg",
+                    // Optional: Adding a dimensions or height and
+                    // width field with the actual width and height
+                    // for REMOTE IMAGES will help improve performance.
+                    dimensions: { width: 1080, height: 1920 } },
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg",
+                    dimensions: { width: 1080, height: 1920 } },
+                { uri: "https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg",
+                    dimensions: { width: 1080, height: 1920 } },
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg",
+                    dimensions: { width: 1080, height: 1920 } },
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg",
+                    dimensions: { width: 1080, height: 1920 } },
+                { uri: "https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg",
+                    dimensions: { width: 1920, height: 1080 } },
+                // Test with 100s to 1000s of data to be rendered
+                // ...
+                // ...
+                // ...
+            ]}
+            // Change this to render how many items before and after it.
+            loadMinimal={true}
+            loadMinimalSize={2}
+            // Turning this off will make it feel faster
+            // and prevent the scroller to slow down
+            // on fast swipes.
+            sensitiveScroll={false}
+        />
+    );
+}
+//...
+```
+
+<br/>
 
 ---
 <br/>
