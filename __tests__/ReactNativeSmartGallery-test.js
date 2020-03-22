@@ -10,8 +10,7 @@ import renderer from "react-test-renderer";
 
 describe("React Native Smart Gallery", () => {
     it("should render correctly", () => {
-        const r = renderer.create(<SmartGallery images={data} />);
-        expect(JSON.stringify(r.toJSON())).not.toMatch(new RegExp("Toolbar button"));
+        renderer.create(<SmartGallery images={data} />);
     });
 
     it("should render toolbar correctly", () => {
