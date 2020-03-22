@@ -169,7 +169,7 @@ render() {
             images={[
                 { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg",
             ]}
-            toolBarItem={() => (
+            toolbarItem={() => (
                 <View>
                     <TouchableOpacity
                         onPress={() => console.log('toolbar button pressed')}
