@@ -55,6 +55,8 @@ export default class SmartGallery extends PureComponent {
         renderItem: PropTypes.func,
         errorComponent: PropTypes.func,
         scrollViewProps: PropTypes.object,
+        toolbarItem: PropTypes.func,
+        imageContainerStyle: PropTypes.object,
     };
 
     static defaultProps = {
@@ -67,7 +69,11 @@ export default class SmartGallery extends PureComponent {
         scrollViewProps: {},
         onEndReachedThreshold: 0.5,
         loadMinimal: true,
-        loadMinimalSize: 2
+        loadMinimalSize: 2,
+        toolbarItem: undefined,
+        imageContainerStyle: {
+            flex: 0.8
+        }
     };
 
     imageRefs = new Map();
@@ -302,65 +308,68 @@ export default class SmartGallery extends PureComponent {
             onTransformGestureReleased, onSwipeUpReleased, onSwipeDownReleased, onDoubleTapStartReached,
             onDoubleTapEndReached, resizeMode, enableResistance, enableScale, maxScale, enableTranslate,
             resistantStrHorizontal, resistantStrVertical, maxOverScrollDistance, errorComponent,
-            renderItem, style
+            renderItem, style, toolbarItem, imageContainerStyle
         } = this.props;
         return (
             <View style={style}>
-                <ImageTransformer
-                    onViewTransformed={(transform) => {
-                        onViewTransformed &&
-                            onViewTransformed(transform, index);
-                    }}
-                    onPinchTransforming={(transform) => {
-                        onPinchTransforming &&
-                            onPinchTransforming(transform, index);
-                    }}
-                    onPinchStartReached={(transform) => {
-                        onPinchStartReached &&
-                            onPinchStartReached(transform, index);
-                    }}
-                    onPinchEndReached={(transform) => {
-                        onPinchEndReached &&
-                            onPinchEndReached(transform, index);
-                    }}
-                    onTransformGestureReleased={(transform) => {
-                        // need the "return" here because the
-                        // return value is checked in ViewTransformer
-                        return onTransformGestureReleased &&
-                            onTransformGestureReleased(transform, index);
-                    }}
-                    onSwipeUpReleased={(transform) => {
-                        onSwipeUpReleased &&
-                            onSwipeUpReleased(transform, index);
-                    }}
-                    onSwipeDownReleased={(transform) => {
-                        onSwipeDownReleased &&
-                            onSwipeDownReleased(transform, index);
-                    }}
-                    onDoubleTapStartReached={(transform) => {
-                        onDoubleTapStartReached &&
-                            onDoubleTapStartReached(transform, index);
-                    }}
-                    onDoubleTapEndReached={(transform) => {
-                        onDoubleTapEndReached &&
-                            onDoubleTapEndReached(transform, index);
-                    }}
-                    ref={(ref) => { this.imageRefs.set(index, ref); }}
-                    key={`innerImage#${item.key || index}`}
-                    errorComponent={errorComponent}
-                    imageComponent={renderItem}
-                    image={item}
-                    index={index}
-                    enableScale={enableScale}
-                    maxScale={maxScale}
-                    enableTranslate={enableTranslate}
-                    enableResistance={enableResistance}
-                    resistantStrHorizontal={resistantStrHorizontal}
-                    resistantStrVertical={resistantStrVertical}
-                    maxOverScrollDistance={maxOverScrollDistance}
-                    resizeMode={resizeMode}
-                    style={style}
-                />
+                <View style={imageContainerStyle}>
+                    <ImageTransformer
+                        onViewTransformed={(transform) => {
+                            onViewTransformed &&
+                                onViewTransformed(transform, index);
+                        }}
+                        onPinchTransforming={(transform) => {
+                            onPinchTransforming &&
+                                onPinchTransforming(transform, index);
+                        }}
+                        onPinchStartReached={(transform) => {
+                            onPinchStartReached &&
+                                onPinchStartReached(transform, index);
+                        }}
+                        onPinchEndReached={(transform) => {
+                            onPinchEndReached &&
+                                onPinchEndReached(transform, index);
+                        }}
+                        onTransformGestureReleased={(transform) => {
+                            // need the "return" here because the
+                            // return value is checked in ViewTransformer
+                            return onTransformGestureReleased &&
+                                onTransformGestureReleased(transform, index);
+                        }}
+                        onSwipeUpReleased={(transform) => {
+                            onSwipeUpReleased &&
+                                onSwipeUpReleased(transform, index);
+                        }}
+                        onSwipeDownReleased={(transform) => {
+                            onSwipeDownReleased &&
+                                onSwipeDownReleased(transform, index);
+                        }}
+                        onDoubleTapStartReached={(transform) => {
+                            onDoubleTapStartReached &&
+                                onDoubleTapStartReached(transform, index);
+                        }}
+                        onDoubleTapEndReached={(transform) => {
+                            onDoubleTapEndReached &&
+                                onDoubleTapEndReached(transform, index);
+                        }}
+                        ref={(ref) => { this.imageRefs.set(index, ref); }}
+                        key={`innerImage#${item.key || index}`}
+                        errorComponent={errorComponent}
+                        imageComponent={renderItem}
+                        image={item}
+                        index={index}
+                        enableScale={enableScale}
+                        maxScale={maxScale}
+                        enableTranslate={enableTranslate}
+                        enableResistance={enableResistance}
+                        resistantStrHorizontal={resistantStrHorizontal}
+                        resistantStrVertical={resistantStrVertical}
+                        maxOverScrollDistance={maxOverScrollDistance}
+                        resizeMode={resizeMode}
+                        style={style}
+                    />
+                </View>
+                {toolbarItem ? toolbarItem(item, index) : null}
             </View>
         );
     }
@@ -420,7 +429,7 @@ export default class SmartGallery extends PureComponent {
                     this._galleryViewPager = component;
                 }}
                 scrollViewStyle={this.props.scrollViewStyle}
-                scrollEnabled={false}
+                scrollEnabled={this.props.toolbarItem ? true : false}
                 renderItem={this.renderPage}
                 data={images}
                 {...gestureResponder}

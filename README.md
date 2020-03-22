@@ -155,6 +155,35 @@ render() {
 //...
 ```
 
+## :tada: Toolbar usage example
+
+Sometimes you would want some custom touchable elements with your image component. This is the way you can use touchable elements. You can add custom styles, etc. To style image container use ```imageContainerStyle``` prop.
+
+```javascript
+import SmartGallery from "react-native-smart-gallery";
+
+//...
+render() {
+    return (
+        <SmartGallery
+            images={[
+                { uri: "https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg",
+            ]}
+            toolBarItem={() => (
+                <View>
+                    <TouchableOpacity
+                        onPress={() => console.log('toolbar button pressed')}
+                    >
+                        <Text>Toolbar button</Text>
+                    </TouchableOpacity>
+                </View>
+            )}
+        />
+    );
+}
+//...
+```
+
 <br/>
 
 ---
