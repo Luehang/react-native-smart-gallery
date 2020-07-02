@@ -15,7 +15,7 @@ An easy and simple to use React Native component to render a large to very large
 - Initial index can be placed anywhere. Supporting both Android and iOS.
 - Easily customizable.
 - Intelligent scrolling detection to cushion rough swipe guestures.
-- Supports both iOS and Android.
+- **Fully supports iOS and PARTIALLY SUPPORTS ANDROID ONLY.**
 
 <h3 align="center">
     Motivation
