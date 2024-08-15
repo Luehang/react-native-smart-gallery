@@ -1,5 +1,5 @@
 {
-  "version": "1.2.2",
+  "version": "1.2.1",
   "name": "react-native-smart-gallery",
   "description": "An easy and simple to use React Native component to render a large to very large list of swipable high performant pages with intelligent guestures responder to cushion rough guestures and detect gestures like pan, pinch and double tap. Supporting both iOS and Android. Free and made possible along with costly maintenance and updates by [Lue Hang](https://www.facebook.com/lue.hang) (the author).",
   "keywords": [
