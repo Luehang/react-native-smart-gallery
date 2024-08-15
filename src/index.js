@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { View, ViewPropTypes } from "react-native";
+import { View } from "react-native";
 import PropTypes from "prop-types";
 import { createResponder } from "react-native-easy-guesture-responder";
 import ImageTransformer from "react-native-image-transformer";
@@ -14,9 +14,10 @@ export default class SmartGallery extends PureComponent {
         loadMinimalSize: PropTypes.number,
         loadMinimalLoader: PropTypes.element,
         resizeMode: PropTypes.string,
-        scrollViewStyle: ViewPropTypes
-            ? ViewPropTypes.style
-            : View.propTypes.style,
+        scrollViewStyle: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.array,
+        ]),
         pageMargin: PropTypes.number,
         sensitiveScroll: PropTypes.bool,
         onPageSelected: PropTypes.func,
